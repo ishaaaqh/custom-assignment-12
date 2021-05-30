@@ -1,0 +1,28 @@
+<h1>Edit Blog</h1>
+
+<%= form_for @blog do |f| %>
+    <% if @blog.errors.any? %>
+        <h2>Errors:</h2>
+        <ul>
+            <% @blog.errors.full_messages.each do |mssg| %>
+                <li><%= mssg %></li>
+            <% end %>
+        </ul>
+    <% end %>
+
+    <p>
+        <%= f.label :title %><br />
+        <%= f.text_field :title %>
+    </p>
+    <p>
+        <%= f.label :description %><br />
+        <%= f.text_area :description %>
+    </p>
+    <p>
+        <%= f.label :blog_image %>
+        <%= f.file_field :blog_image %>
+    </p>
+    <p>
+        <%= f.submit "Update Blog" %>
+    </p>
+<% end %>

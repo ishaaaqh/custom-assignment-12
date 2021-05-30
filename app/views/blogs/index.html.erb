@@ -1,0 +1,10 @@
+<li><%= link_to "Add a big deal", new_blog_path%></li>
+<% if @blogs.count == 0 %>
+       <h1>no blogs avilable</h1>
+<% else %>
+        <% @blogs.all.each do |blog| %>
+            <h2><%= link_to blog.title,blog_path(blog)%></h2>
+            <p><%= blog.description %></p>
+        <% end %>
+<% end %>
+

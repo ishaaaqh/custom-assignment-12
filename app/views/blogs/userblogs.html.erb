@@ -1,0 +1,9 @@
+
+<% if @blogs.count == 0 %>
+<h1>no blogs avilable</h1>
+<% else %>
+ <% @blogs.all.each do |blog| %>
+     <h2><%= blog.title %></h2>
+     <%= link_to blog.title,blog_path(blog)%>
+ <% end %>
+<% end %>
