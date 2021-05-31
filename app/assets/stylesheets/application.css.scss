@@ -88,7 +88,13 @@
 
  
  .signup-form {
-   @include background-tile;
+   box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px 6px #ccc;
+    padding: 2.3em 3.15em;
+    margin: 100px auto;
+    max-width: 600px;
 
    h2 {
      margin-top: 0;
@@ -107,6 +113,27 @@
 
 .data {
   padding: 20px;
+}
+
+label{
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+    width: 150px;
+    letter-spacing: 0.6px;
+}
+input[type=email], input[type=password]{
+    max-width: 200px;
+    width: 200px;
+}
+
+div.input{
+    margin: 10px 0;
+    label.boolean{
+        margin-left: 4px;
+        vertical-align: middle;
+    }
 }
 
 

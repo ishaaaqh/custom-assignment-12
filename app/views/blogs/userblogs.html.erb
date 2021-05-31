@@ -3,7 +3,7 @@
 <h1>no blogs avilable</h1>
 <% else %>
  <% @blogs.all.each do |blog| %>
-     <h2><%= blog.title %></h2>
+     <h2class="card-title"><%= blog.title %></h2class=>
      <%= link_to blog.title,blog_path(blog)%>
  <% end %>
 <% end %>

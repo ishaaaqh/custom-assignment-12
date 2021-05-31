@@ -1,3 +1,16 @@
 // Place all the styles related to the Blog controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.blog-list.card{
+    width: 18rem;
+    border: 3px solid #c4148e;
+    padding: 20px;
+    box-sizing: content-box;
+    border-radius: 12px;
+    display: inline-block;
+    margin: 20px;
+    img.card-img-top{
+        vertical-align: middle;
+        max-width: 18rem;
+    }
+}

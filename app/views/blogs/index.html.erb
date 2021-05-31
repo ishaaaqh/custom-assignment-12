@@ -1,10 +1,20 @@
-<li><%= link_to "Add a big deal", new_blog_path%></li>
+
 <% if @blogs.count == 0 %>
        <h1>no blogs avilable</h1>
 <% else %>
         <% @blogs.all.each do |blog| %>
-            <h2><%= link_to blog.title,blog_path(blog)%></h2>
-            <p><%= blog.description %></p>
+            <%= link_to blog_path(blog), :action => 'go' do %>
+                <div class="card blog-list" style="width: 18rem;">
+                    <% if !blog.blog_image.blank? %>
+                        <%= image_tag blog.blog_image, :class => "card-img-top", :alt =>"Card image cap"%>
+                    <% else %>
+                        <%= image_tag("blog-image.png", :class => "card-img-top", :alt =>"Card image cap")%>
+                    <% end %>  
+                    <div class="card-body">
+                        <p class="card-text"><%= blog.title %></p>
+                    </div>
+                </div>
+            <% end %>
         <% end %>
 <% end %>
 
