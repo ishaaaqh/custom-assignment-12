@@ -29,17 +29,16 @@ class BlogsController < ApplicationController
 
   def edit
     @blog = Blog.find(params[:id])
+    redirect_to blog_path, :notice => "Only creator can edit the blogs" if current_user && @blog.user_id != current_user.id
   end
 
   def update
     @blog = Blog.find(params[:id])
-
     if @blog.update(blog_params)
       redirect_to blog_path, :notice => "Blog edited"
     else
       render "edit"
     end
-
   end
 
   def destroy   
